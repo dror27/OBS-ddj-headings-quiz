@@ -1,0 +1,34 @@
+todo file
+
+code:
+[ ] /sources - select sources, show selected sources
+[ ] /stats
+[ ] mention contact email address
+[x] add a domain field to the source entries. value for existing is something like: "uknews"
+[ ] raw export of headline data - straight mongodb dunp?
+[ ] remove rss links from sources, move to advanced area
+[x] remove quiz prefix (first line) after the first one
+[ ] refine quiz display, remove "anonymous", 100%, etc
+[ ] donate? paywall?
+[ ] downloads (headings, sources)
+[ ] credits (rss, feedburner, sources)
+[ ] sha265 usernames?
+[ ] get own user info back
+[ ] push? (subscription)
+[ ] unique id for sources
+[ ] analysis plugins: sentiment, author gender
+[ ] include additional fields in text search (tags, ?)
+[ ] headings indexes (timestamp, source.name, source.domain)
+[ ] userlog table (quiz presented, quiz answered)
+
+
+meta:
+[ ] consult on how to structure so that research can use the accumulated data
+[ ] partner on the project
+[ ] spin into a separate repo?
+[ ] separate repo for data snapshots (weekly? automate)
+
+why? (value)
+[ ] personal: get to know media outlets and their leanings/style
+[ ] personal: improve headline writing
+
