@@ -6,12 +6,10 @@ import feedparser
 from pprint import pprint
 import datetime
 
+import core.db
+
 # open database connection
-username="root"
-password="mongo"
-client = MongoClient('mongodb://%s:%s@mongo' % (username, password))
-db = client.headings
-db.headings.create_index([('title', pymongo.TEXT)], name='search_index', default_language='english')
+db = core.db.get_db()
 
 # loop on sources
 for source in db.sources.find():
