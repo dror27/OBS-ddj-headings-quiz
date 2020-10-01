@@ -3,21 +3,21 @@ todo file
 Release 1
 
 code:
-[/] /sources - select sources, show selected sources
+[x] /sources - select sources, show selected sources
 [x] add a domain field to the source entries. value for existing is something like: "uknews"
 [x] remove quiz prefix (first line) after the first one
-[/] credits (rss, feedburner, sources)
-[/] sha265 usernames?
+[x] credits (rss, feedburner, sources)
+[x] sha265 usernames?
 [x] make QRCode with link to bot: https://t.me/HeadlinerQuizBot
-[/] separate code into multiple files
-[/] mention contact telegram account
-[/] non container run
-[/] inplement command to send qr code
-[/] get own user info back
-[/] headings indexes (timestamp, source.name, source.domain)
+[x] separate code into multiple files
+[x] mention contact telegram account
+[x] non container run
+[x] inplement command to send qr code
+[x] get own user info back
+[x] headings indexes (timestamp, source.name, source.domain)
+[x] repeat last keyword 
 
 [ ] raw export of headline data - straight mongodb dunp?
-
 [ ] unique id for sources
 [ ] /stats
 [ ] remove rss links from sources, move to advanced area

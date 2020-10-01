@@ -1,19 +1,31 @@
 # quiz command
 
-import common
+from telegram import (Poll)
+
+
+import cmd.common
+import core.user
+import core.quiz_builder
 
 def quiz(update, context, qs=2):
 
-    info = get_user_info(update)
+    info = core.user.get_user_info(update)
     info["quizs"] = info["quizs"] + 1
-    set_user_info(update, info)
 
-    # extract keyword text
-    keyword = cmd_tail(upadate)
+    # extract keyword text or get it from user info
+    keyword = cmd.common.cmd_tail(update)
+    if keyword:
+        if keyword == "0":
+            info["keyword"] = ""
+            keyword = None
+        else:
+            info["keyword"] = keyword
+    elif "keyword" in info and info["keyword"]:
+        keyword = info["keyword"]
     
-    q = build_heading_quiz(qs, keyword=keyword, sources_subset=info["sources"])
+    q = core.quiz_builder.build_heading_quiz(qs, keyword=keyword, sources_subset=info["sources"])
     if not q:
-        q = build_default_quiz()
+        q = core.quiz_builder.build_default_quiz()
         
     questions = q["sources"]
     prefix = "Where was this heading published?\n\n"  if info["quizs"] <= 3 else ""
@@ -25,6 +37,7 @@ def quiz(update, context, qs=2):
                                  "q": q,
                                  "qs": qs}}
     context.bot_data.update(payload)
+    core.user.set_user_info(update, info)
 
 def quiz_post_timer(context):
     quiz_data = context.job.context

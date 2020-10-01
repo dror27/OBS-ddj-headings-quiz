@@ -2,15 +2,22 @@
 
 import random
 import datetime
+import logging
+
+import core.db
+
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 def build_heading_quiz(answers, keyword=None, sources_subset=None):
 
-    db = get_db()
+    db = core.db.get_db()
     
     # loop for 10 attempts
     midnight = datetime.datetime.combine(datetime.date.today(), datetime.datetime.min.time())
     sources_all = [x["name"] for x in db.sources.find()]
-    domain = db_env("DOMAIN", "uknews")
+    domain = core.db.db_env("DOMAIN", "uknews")
 
     # subset sources?
     if sources_subset and len(sources_subset) > 1 :

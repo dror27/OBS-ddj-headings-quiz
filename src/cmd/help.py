@@ -1,5 +1,7 @@
 # help command
 
+import os
+
 def help_handler(update, context):
     update.message.reply_text(
 """
@@ -14,6 +16,8 @@ def help_handler(update, context):
 /sources 0 - reset sources to all
 
 /credits - list credits
+/userinfo - download your user info
+/qr - get a qr code to the bot
 """)
 
 def short_handler(update, context):
@@ -24,6 +28,7 @@ def short_handler(update, context):
 /q4 - /quiz4
 
 /q <keyword> - filter for keyword
+/q 0 - cancel filter
 
 /qr - send qr code
 

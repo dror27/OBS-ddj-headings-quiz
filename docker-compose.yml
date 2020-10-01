@@ -26,7 +26,7 @@ services:
     restart: always
     environment:
       TEL_BOT_TOKEN:
-      TEL_BOT_DDBFORK: True
+      TEL_BOT_DBFORK: 1
 
 
 
